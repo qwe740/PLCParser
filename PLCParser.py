@@ -73,8 +73,3 @@ class NetworkSimulationProfile:
             
             self.results2d[branch] = self.results1d[branch].reshape((self.pointcount[branch] , self.varcount[branch]))
             self.results[branch] = pd.DataFrame(data=self.results2d[branch], columns=self.varnames[branch])
-        
-directory = r'G:\Shared drives\OLSUS\Pikka\Simulations\36 - SS Operating Envelope\Water Injection\STP to NPF\WI_STPtoNPF_Q8500stbd_Tin60F_Parr75psig'                       
-model = NetworkSimulationProfile(directory)
-model.extractResults()
-print(model.results['STP'].head())
